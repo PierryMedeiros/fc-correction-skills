@@ -112,3 +112,13 @@ Utilize otelhttp.NewTransport para o cliente HTTP do Servico A e otel.GetTextMap
 Reveja esse ponto e, quando finalizar, envie o projeto novamente para correcao.
 
 Bom trabalho!
+### Exemplo 4 (Link invalido)
+Ola, {Nome}!
+
+Obrigado por enviar a sua resposta ao exercicio!
+
+O link enviado nao aponta para um repositorio valido ou acessivel. Verifique se o repositorio e publico e se o link esta correto.
+
+Reveja esse ponto e, quando finalizar, envie o projeto novamente para correcao.
+
+Bom trabalho!
