@@ -22,8 +22,9 @@ Alem de ler os arquivos, voce DEVE executar o projeto para validar o funcionamen
 2. Aguarde os containers subirem (use `sleep 15` ou verifique com `docker compose ps`).
 3. Teste REST: crie uma order com `curl -X POST` e liste com `curl` no endpoint GET /order (verifique a porta no docker-compose ou codigo).
 4. Teste GraphQL: envie query de listagem via `curl -X POST` no endpoint GraphQL.
-5. Ao final, execute `docker compose down -v` para limpar.
-6. Inclua os resultados da execucao na sua avaliacao. Se o `docker compose up` falhar ou os endpoints nao responderem, inclua os erros no motivo da reprovacao.
+5. Teste gRPC: invoque o metodo `ListOrders` via `grpcurl`. Como `grpcurl` pode nao estar instalado localmente, use a imagem `fullstorydev/grpcurl` com `docker run --rm --network host fullstorydev/grpcurl -plaintext localhost:<porta> <pacote>.<Service>/ListOrders` (ajuste host/porta conforme o docker-compose). A flag `--rm` e OBRIGATORIA para o container ser removido automaticamente apos a execucao e nao acumular lixo. Se o servico nao tiver reflection habilitado, use `-proto` apontando para o `.proto` montado via `-v`.
+6. Ao final, execute `docker compose down -v` para limpar. Confirme tambem com `docker ps -a` que nao sobrou nenhum container `fullstorydev/grpcurl` (nao deve sobrar se `--rm` foi usado); se sobrar, remova com `docker rm -f`.
+7. Inclua os resultados da execucao na sua avaliacao. Se o `docker compose up` falhar ou os endpoints (REST, gRPC ou GraphQL) nao responderem, inclua os erros no motivo da reprovacao.
 
 ## Procedimento de Avaliacao
 

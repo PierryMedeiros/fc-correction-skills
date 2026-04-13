@@ -1,4 +1,4 @@
-# Guia de Devolutivas - Docker Go Otimizado
+# Guia de Devolutivas - Criacao de Skills (Refactor-Arch)
 
 ## Como Escrever uma Devolutiva de Qualidade
 
@@ -31,7 +31,7 @@ Ola, {Nome}!
 
 Parabens pelo bom trabalho!
 
-Voce cumpriu todos os requisitos do desafio com sucesso: a aplicacao Go imprime 'Full Cycle Rocks!!', o Dockerfile utiliza multi-stage build com imagem final scratch, e a imagem resultante tem menos de 2MB.
+Voce cumpriu todos os requisitos do desafio com sucesso: a skill refactor-arch esta presente nos 3 projetos com as 3 fases bem definidas, o catalogo contem mais de 8 anti-patterns com severidade distribuida e deteccao de APIs deprecated, e os 3 relatorios de auditoria estao no formato padronizado com arquivo e linha em cada finding.
 
 Continue com esse ritmo de dedicacao, seu progresso esta nitido!
 
@@ -45,7 +45,7 @@ Ola, {Nome}!
 
 Parabens pelo bom trabalho!
 
-Excelente trabalho! A imagem Docker tem apenas {X}KB, bem abaixo do limite de 2MB. O uso de scratch como imagem base e as flags de otimizacao demonstram dominio das tecnicas de otimizacao de imagens.
+Excelente trabalho! Destaco a qualidade do playbook de refatoracao, com exemplos antes/depois bem estruturados que tornam a skill verdadeiramente agnostica de tecnologia. Os 3 projetos ficaram organizados em MVC e os findings CRITICAL foram corrigidos corretamente.
 
 Continue com esse ritmo de dedicacao, seu progresso esta nitido!
 
@@ -59,7 +59,7 @@ Ola, {Nome}!
 
 Parabens pelo bom trabalho!
 
-Todos os requisitos atendidos. O Dockerfile esta otimizado com multi-stage build, a imagem final e minima, e o README contem o nome real da imagem no Docker Hub com o comando para execucao.
+Voce cumpriu todos os requisitos. A analise manual no README esta detalhada para os 3 projetos, os relatorios em reports/ seguem o template definido na skill, e a refatoracao eliminou as credenciais hardcoded e quebrou as God Classes em modulos MVC bem separados.
 
 Continue com esse ritmo de dedicacao, seu progresso esta nitido!
 
@@ -77,9 +77,9 @@ Ola, {Nome}!
 
 Obrigado por enviar a sua resposta ao exercicio!
 
-A imagem Docker construida tem {X}MB, excedendo o limite de 2MB exigido pelo enunciado.
+A skill refactor-arch so esta presente dentro de code-smells-project. Os outros dois projetos (ecommerce-api-legacy e task-manager-api) nao contem a pasta .claude/skills/refactor-arch/.
 
-Pesquise sobre tecnicas de otimizacao como multi-stage build com imagem scratch e flags de compilacao como CGO_ENABLED=0 e -ldflags='-s -w'.
+Conforme o enunciado, a skill deve ser copiada para dentro dos 3 projetos para provar que e agnostica de tecnologia e reutilizavel.
 
 Reveja esse ponto e, quando finalizar, envie o projeto novamente para correcao.
 
@@ -91,9 +91,9 @@ Ola, {Nome}!
 
 Obrigado por enviar a sua resposta ao exercicio!
 
-O README.md nao contem o nome real da imagem no Docker Hub. Encontramos apenas um placeholder generico como '<seu-usuario/imagem>'.
+O catalogo de anti-patterns contem apenas 5 itens, todos de severidade HIGH, e nao inclui deteccao de APIs deprecated.
 
-Por favor, publique a imagem no Docker Hub e atualize o README com o nome concreto da imagem e o comando exato para execucao (ex: docker run seu-usuario/fullcycle).
+Conforme o enunciado, o catalogo deve ter no minimo 8 anti-patterns, com severidade distribuida (CRITICAL, HIGH, MEDIUM, LOW) e obrigatoriamente incluir deteccao de APIs obsoletas recomendando o equivalente moderno.
 
 Reveja esse ponto e, quando finalizar, envie o projeto novamente para correcao.
 
@@ -105,15 +105,16 @@ Ola, {Nome}!
 
 Obrigado por enviar a sua resposta ao exercicio!
 
-O output do container nao e exatamente 'Full Cycle Rocks!!'.
+O projeto ecommerce-api-legacy nao foi refatorado para o padrao MVC — o arquivo src/GodManager.js continua concentrando toda a logica de negocio, rotas e acesso a dados, mesmo tendo sido identificado como God Object no relatorio.
 
-Verifique se o fmt.Println no main.go imprime exatamente 'Full Cycle Rocks!!' (com dois pontos de exclamacao).
+Conforme o enunciado, a Fase 3 da skill deve efetivamente reestruturar cada projeto em models, views/routes e controllers, corrigindo os findings CRITICAL e HIGH levantados na auditoria.
 
 Reveja esse ponto e, quando finalizar, envie o projeto novamente para correcao.
 
 Bom trabalho!
 
 ### Exemplo 4 (Link invalido)
+
 Ola, {Nome}!
 
 Obrigado por enviar a sua resposta ao exercicio!

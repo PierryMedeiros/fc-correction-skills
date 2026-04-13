@@ -63,10 +63,12 @@ Bom trabalho!
 ### Exemplo 3
 Ola, {Nome}!
 Obrigado por enviar a sua resposta ao exercicio!
-O link enviado nao aponta para um repositorio valido ou acessivel.
-Verifique se o repositorio e publico e se o link esta correto.
+O commit foi assinado, mas a chave GPG usada nao esta vinculada ao seu email do GitHub, por isso o commit aparece como 'Unverified' no historico (verified: false).
+Configure sua chave GPG no GitHub em Settings > SSH and GPG keys e certifique-se de que o email da chave corresponde ao email do commit.
 Reveja esse ponto e, quando finalizar, envie o projeto novamente para correcao.
-Bom trabalho!### Exemplo 4 (Link invalido)
+Bom trabalho!
+
+### Exemplo 4 (Link invalido)
 Ola, {Nome}!
 
 Obrigado por enviar a sua resposta ao exercicio!

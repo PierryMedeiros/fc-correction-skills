@@ -4,9 +4,9 @@ description: >
   Corrige e avalia o desafio de Pull, Otimizacao e Avaliacao de Prompts com LangChain e LangSmith.
   TRIGGER quando: desafio de prompt engineering, prompt optimization, LangChain, LangSmith,
   few-shot, chain of thought, CoT, role prompting, YAML prompt, push prompt, pull prompt,
-  avaliacao de prompt, metricas de prompt, tone score, completeness, user story, bug report.
-  Palavras-chave: prompt, langchain, langsmith, few-shot, CoT, role prompting, YAML,
-  push, pull, avaliacao, metricas, tone, completeness, acceptance criteria, user story, python.
+  avaliacao de prompt, metricas de prompt, helpfulness, correctness, f1-score, clarity, precision, user story, bug report.
+  Palavras-chave: prompt, langchain, langsmith, few-shot, CoT, ToT, SoT, ReAct, role prompting, YAML,
+  push, pull, avaliacao, metricas, helpfulness, correctness, f1-score, clarity, precision, user story, python.
 allowed-tools: Read, Glob, Grep, Bash
 ---
 
@@ -36,10 +36,13 @@ Verifique se os seguintes arquivos obrigatorios existem e nao estao vazios:
 - `.env` (ou `.env.example` preenchido)
 
 ### 2. Analise do Prompt Otimizado (`prompts/bug_to_user_story_v2.yml`)
-- Verifique se o arquivo contem as tecnicas solicitadas (Few-shot, CoT, Role Prompting, etc).
+- **Few-shot Learning e OBRIGATORIO**: o prompt DEVE conter exemplos claros de entrada/saida.
+- Alem de Few-shot, o prompt deve aplicar pelo menos UMA tecnica adicional: Chain of Thought (CoT), Tree of Thought (ToT), Skeleton of Thought (SoT), ReAct ou Role Prompting.
 - Deve haver definicao de persona (ex: "Voce e um Product Manager").
-- Deve haver exemplos de entrada/saida (Few-shot).
+- Deve conter instrucoes claras e regras de comportamento.
 - Nao deve conter marcadores `[TODO]`.
+
+Pontos desejaveis (nao reprovar caso ausentes, apenas mencionar na devolutiva se aplicavel): tratamento de edge cases, separacao explicita de System vs User Prompt.
 
 ### 3. Analise dos Testes (`tests/test_prompts.py`)
 Verifique se os 6 testes obrigatorios estao implementados usando `pytest`:
@@ -52,9 +55,11 @@ Verifique se os 6 testes obrigatorios estao implementados usando `pytest`:
 
 ### 4. Analise do README.md
 Verifique se o README contem as secoes obrigatorias:
-- **Tecnicas Aplicadas (Fase 2):** Justificativa e exemplos das tecnicas.
-- **Resultados Finais:** Link publico do LangSmith, screenshots (ou mencao a elas) e tabela comparativa v1 vs v2.
-- **Como Executar:** Instrucoes de execucao.
+- **Tecnicas Aplicadas (Fase 2):** Justificativa e exemplos praticos das tecnicas escolhidas.
+- **Resultados Finais:** Link publico do dashboard do LangSmith (ou screenshots), evidencia de que as 5 metricas (Helpfulness, Correctness, F1-Score, Clarity, Precision) atingiram >= 0.9, e tabela comparativa v1 vs v2.
+- **Como Executar:** Instrucoes de execucao, pre-requisitos e comandos de cada fase.
+
+Pontos desejaveis (nao reprovar caso ausentes): mencao a tracing de exemplos no LangSmith, confirmacao de que o prompt v2 foi publicado como publico no Prompt Hub.
 
 ### Verificacoes Adicionais
 - O repositorio deve conter apenas o projeto deste desafio (repositorio unico). Reprovar se houver multiplos desafios no mesmo repositorio.
@@ -89,13 +94,16 @@ Tecnologias: Python 3.9+, LangChain, LangSmith, YAML.
 
 Requisitos de Codigo:
 - src/pull_prompts.py: Pull do prompt `leonanluppi/bug_to_user_story_v1`.
-- prompts/bug_to_user_story_v2.yml: Prompt otimizado com pelo menos 2 tecnicas (Few-shot, CoT, Role Prompting, etc).
-- src/push_prompts.py: Push do prompt v2 com metadados.
+- prompts/bug_to_user_story_v2.yml: Prompt otimizado com Few-shot (obrigatorio) + pelo menos 1 tecnica adicional (CoT, ToT, SoT, ReAct ou Role Prompting), com persona, tratamento de edge cases e separacao System/User Prompt.
+- src/push_prompts.py: Push do prompt v2 com metadados, publicado como publico no Prompt Hub.
 - tests/test_prompts.py: 6 testes especificos (system_prompt, role, format, few-shot, no_todos, techniques).
 
-Criterios de Aprovacao (Metricas):
-- Tone Score >= 0.9
-- Acceptance Criteria Score >= 0.9
-- User Story Format Score >= 0.9
-- Completeness Score >= 0.9
-(Analise estatica deve verificar se o aluno documentou que atingiu essas metas no README).
+Criterios de Aprovacao (Metricas - TODAS >= 0.9):
+Metricas Derivadas:
+- Helpfulness >= 0.9
+- Correctness >= 0.9
+Metricas Base:
+- F1-Score >= 0.9
+- Clarity >= 0.9
+- Precision >= 0.9
+(Analise estatica deve verificar se o aluno documentou que atingiu essas metas no README, com link publico do LangSmith e tracing de pelo menos 3 exemplos).
